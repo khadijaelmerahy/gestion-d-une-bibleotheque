@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane stylesheets="@../smartlib/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+    <Tab text="Gestion des Livres">
+        <content>
+            <VBox spacing="10">
+                <TableView fx:id="livreTable">
+                    <columns>
+                        <TableColumn fx:id="idLivreColumn" prefWidth="50" text="ID" />
+                        <TableColumn fx:id="titreColumn" prefWidth="150" text="Titre" />
+                        <TableColumn fx:id="auteurColumn" prefWidth="150" text="Auteur" />
+                        <TableColumn fx:id="isbnColumn" prefWidth="100" text="ISBN" />
+                        <TableColumn fx:id="stockColumn" prefWidth="50" text="Stock" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="idField" promptText="Entrez l'ID du livre" />
+                <Button onAction="#loadLivreById" text="Charger Livre" />
+                <TextField fx:id="titreField" promptText="Titre" />
+                <TextField fx:id="auteurField" promptText="Auteur" />
+                <TextField fx:id="isbnField" promptText="ISBN" />
+                <TextField fx:id="stockField" promptText="Stock" />
+                <Button onAction="#addLivre" text="Ajouter" />
+                <Button onAction="#updateLivre" text="Modifier" />
+                <Button onAction="#deleteLivre" text="Supprimer" />
+            </VBox>
+        </content>
+    </Tab>
+    <Tab text="Gestion des Étudiants">
+        <content>
+            <VBox spacing="10">
+                <TableView fx:id="etudiantTable">
+                    <columns>
+                        <TableColumn fx:id="idEtudiantColumn" prefWidth="50" text="ID" />
+                        <TableColumn fx:id="cneColumn" prefWidth="100" text="CNE" />
+                        <TableColumn fx:id="nomColumn" prefWidth="150" text="Nom" />
+                        <TableColumn fx:id="filiereColumn" prefWidth="100" text="Filière" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="idEtudiantField" promptText="Entrez l'ID de l'étudiant" />
+                <Button onAction="#loadEtudiantById" text="Charger Étudiant" />
+                <TextField fx:id="cneField" promptText="CNE" />
+                <TextField fx:id="nomField" promptText="Nom" />
+                <TextField fx:id="filiereField" promptText="Filière" />
+                <Button onAction="#addEtudiant" text="Ajouter" />
+                <Button onAction="#updateEtudiant" text="Modifier" />
+                <Button onAction="#deleteEtudiant" text="Supprimer" />
+            </VBox>
+        </content>
+    </Tab>
+    <Tab text="Statistiques">
+        <content>
+            <VBox spacing="10">
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Statistiques d'Usage" />
+                
+                <!-- Tableau des livres les plus empruntés -->
+                <Label text="Livres les plus empruntés" />
+                <TableView fx:id="mostBorrowedTable" prefHeight="200.0">
+                    <columns>
+                        <TableColumn fx:id="bookTitleColumn" prefWidth="300.0" text="Titre du Livre" />
+                        <TableColumn fx:id="borrowCountColumn" prefWidth="100.0" text="Nombre d'Emprunts" />
+                    </columns>
+                </TableView>
+
+                <!-- Tableau des retardataires fréquents -->
+                <Label text="Retardataires fréquents" />
+                <TableView fx:id="delayersTable" prefHeight="200.0">
+                    <columns>
+                        <TableColumn fx:id="studentNameColumn" prefWidth="300.0" text="Nom de l'Étudiant" />
+                        <TableColumn fx:id="delayCountColumn" prefWidth="100.0" text="Nombre de Retards" />
+                    </columns>
+                </TableView>
+                <Button onAction="#refreshStats" text="Rafraîchir Statistiques" />
+            </VBox>
+        </content>
+    </Tab>
+</TabPane>

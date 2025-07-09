@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Paramètres de connexion à la base de données -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Smartlib?zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Khadija@2005</property>
+        <!-- Note : En production, envisagez d'utiliser une variable d'environnement ou un fichier de configuration sécurisé pour le mot de passe -->
+
+        <!-- Dialecte pour MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Options de débogage -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Gestion automatique des tables (update pour ne pas supprimer les données existantes) -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Configuration du pool de connexions (valeurs par défaut ajustées pour éviter des problèmes) -->
+        <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.connection.autocommit">false</property>
+
+        <!-- Mappages des entités -->
+        <mapping class="model.Utilisateur"/>
+        <mapping class="model.Etudiant"/>
+        <mapping class="model.Livre"/>
+        <mapping class="model.Emprunt"/>
+    </session-factory>
+</hibernate-configuration>

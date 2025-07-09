@@ -1,0 +1,75 @@
+/* Stylesheet pour un thème moderne et élégant pour interfaces FXML */
+
+/* Style pour le conteneur principal avec un dégradé moderne */
+.mainFxmlClass {
+    -fx-background-color: linear-gradient(to bottom right, #6B728E, #A5B4FC, #818CF8);
+    -fx-padding: 25px;
+    -fx-alignment: center;
+    -fx-pref-width: 600px; /* Largeur réduite pour une interface compacte */
+    -fx-background-radius: 10px; /* Coins arrondis pour le conteneur */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2); /* Ombre légère */
+}
+
+/* Style pour les étiquettes (labels) */
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #1F2937; /* Texte sombre pour contraste avec le fond clair */
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-background-color: #F1F5F9; /* Fond clair assorti aux champs de texte */
+    -fx-background-radius: 5px; /* Coins arrondis */
+    -fx-padding: 5px 10px; /* Padding pour un aspect soigné */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1); /* Ombre subtile */
+}
+
+/* Style pour les champs de texte (text fields) */
+.text-field {
+    -fx-background-color: #F1F5F9; /* Fond clair pour les champs */
+    -fx-border-color: #A5B4FC; /* Bordure assortie au dégradé */
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1F2937; /* Texte sombre pour lisibilité */
+    -fx-pref-width: 200px; /* Largeur réduite pour username et password */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1); /* Ombre subtile */
+    -fx-transition: all 0.3s ease; /* Transition fluide */
+}
+
+/* Style pour les champs de texte au focus */
+.text-field:focused {
+    -fx-border-color: #818CF8; /* Couleur plus vive au focus */
+    -fx-border-width: 2px;
+    -fx-background-color: #FFFFFF; /* Fond blanc au focus pour effet de surbrillance */
+}
+
+/* Style pour les boutons */
+.button {
+    -fx-background-color: #A5B4FC; /* Couleur assortie au dégradé */
+    -fx-text-fill: #1F2937; /* Texte sombre pour contraste */
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px 25px;
+    -fx-pref-width: 150px; /* Largeur réduite pour les boutons */
+    -fx-cursor: hand; /* Curseur main pour indiquer que c'est cliquable */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1); /* Ombre subtile */
+    -fx-transition: all 0.3s ease; /* Transition fluide */
+}
+
+/* Style pour les boutons au survol */
+.button:hover {
+    -fx-background-color: #818CF8; /* Couleur plus vive au survol */
+    -fx-scale-x: 1.05; /* Léger agrandissement */
+    -fx-scale-y: 1.05;
+}
+
+/* Style pour les boutons lorsqu'ils sont pressés */
+.button:pressed {
+    -fx-background-color: #6B728E; /* Couleur plus sombre lorsqu'on appuie */
+    -fx-text-fill: #F1F5F9; /* Texte clair pour contraste */
+    -fx-scale-x: 0.95; /* Léger rétrécissement pour effet de clic */
+    -fx-scale-y: 0.95;
+}
